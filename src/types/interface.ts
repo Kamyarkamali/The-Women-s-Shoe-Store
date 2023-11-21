@@ -5,4 +5,10 @@ interface MENULIST{
     icon?:any
 }
 
-export type {MENULIST}
+interface IMAGE{
+    id:number,
+    image:any,
+    title?:string
+}
+
+export type {MENULIST,IMAGE}

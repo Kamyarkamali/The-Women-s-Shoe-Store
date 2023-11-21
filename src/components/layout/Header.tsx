@@ -16,7 +16,6 @@ import { MENULIST } from "../../types/interface";
 function Header() {
 
   const [show,setShow]=useState<boolean>(false)
-  console.log(show)
 
   const menu:MENULIST[]=[
     {id:1,title:"صفحه اصلی",url:""},
@@ -53,11 +52,11 @@ function Header() {
         </div>
         
        {/* meni list */}
-       <div className={show ? "absolute right-0 lg:hidden bg-white duration-300 p-3 w-[300px] rounded-md top-[5rem] h-screen" :"absolute lg:hidden duration-300 right-[-100%] bg-white p-3 w-[300px] rounded-md top-[5rem] h-screen"}>
+       <div className={show ? "absolute z-20 right-0 lg:hidden bg-white duration-300 p-3 w-[300px] rounded-md top-[5rem] h-screen" :"absolute z-20 lg:hidden duration-300 right-[-100%] bg-white p-3 w-[300px] rounded-md top-[5rem] h-screen"}>
             <ul>
               <AiOutlineClose size={24} onClick={()=>setShow(!show)} className="cursor-pointer"/>
               {menu.map((item)=>(
-                <li className="flex border-b-2 text-sm bg-[#F7F7F7] p-1 rounded-md items-center mt-9 justify-between">{item.title} {item.icon}</li>
+                <li key={item.id} className="flex border-b-2 text-sm bg-[#F7F7F7] p-1 rounded-md items-center mt-9 justify-between">{item.title} {item.icon}</li>
                 ))}
             </ul>
                 </div>
