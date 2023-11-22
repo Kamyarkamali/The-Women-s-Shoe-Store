@@ -11,4 +11,20 @@ interface IMAGE{
     title?:string
 }
 
-export type {MENULIST,IMAGE}
+
+interface DATA{
+    id:number,
+    title:string,
+    size?:number,
+    image1?:any,
+    image2?:any,
+    image3?:any,
+    image4?:any,
+    image5?:any,
+    cod:number,
+    description:any,
+    category:string,
+    price:number
+}
+
+export type {MENULIST,IMAGE,DATA}

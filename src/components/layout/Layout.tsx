@@ -7,7 +7,7 @@ function Layout({children}:any) {
       
     <Header/>
 
-    <div>
+    <div className="h-fit">
       {children}
     </div>
 

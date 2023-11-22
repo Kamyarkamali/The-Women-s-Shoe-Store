@@ -9,6 +9,7 @@ import { AiOutlinePlus } from "react-icons/ai";
 import { AiOutlineUserAdd } from "react-icons/ai";
 import { AiOutlineMenu } from "react-icons/ai";
 import { AiOutlineClose } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 //interface
 import { MENULIST } from "../../types/interface";
@@ -31,9 +32,11 @@ function Header() {
   return (
     <div className="flex bg-white items-center justify-between rounded-lg p-3 max-w-[1500px] mx-auto">
       <div>
+        <Link to={"/"}>
         <img src={logo} alt="logo" className="w-[60px]"/>
+        </Link>
       </div>
-
+        
       <div>
         <Search/>
       </div>

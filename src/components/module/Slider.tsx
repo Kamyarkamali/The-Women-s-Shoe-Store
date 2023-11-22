@@ -34,7 +34,7 @@ export default function SimpleSlider() {
       <Slider {...settings}>
 
         {images.map((item)=>(
-        <div>
+        <div key={item.id}>
             <img src={item.image} alt="/" className="rounded-lg"/>
             </div>
             ))}

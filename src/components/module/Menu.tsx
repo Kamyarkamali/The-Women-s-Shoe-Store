@@ -23,7 +23,7 @@ function Menu() {
     <div className="max-w-[1500px] hidden  mx-auto shadow-md lg:flex p-3 rounded-md relative">
         <ul className="flex justify-between gap-11">
             {menu.map((item)=>(
-                <li className="flex text-sm gap-1 items-center">{item.title} {item.icon}</li>
+                <li key={item.id} className="flex text-sm gap-1 items-center">{item.title} {item.icon}</li>
             ))}
                 <AiFillShopping color="gray" size={30} className="absolute left-9"/>
                 <span className="absolute bg-[#3D3D3D] left-[3.4rem] top-[1.4rem] rounded-full p-[3px] h-6 w-5 text-white text-center">0</span>

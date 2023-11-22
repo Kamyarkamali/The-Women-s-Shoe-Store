@@ -6,6 +6,7 @@ import image4 from "../../../public/product/4.jpg"
 
 //slider
 import { IMAGE } from "../../types/interface"
+import { Link } from "react-router-dom"
 
 function ProductSlider() {
 
@@ -29,8 +30,8 @@ function ProductSlider() {
   return (
     <div className="lg:flex grid grid-cols-2 gap-4 max-w-[1200px] mt-9 lg:gap-24 items-center mx-auto">
         {menu.map((item)=>(
-            <div className="relative duration-300 flex justify-center" onMouseLeave={()=>handelMouseLeave(item.id)}>
-            <img key={item.id} src={item.image} alt="/" className="rounded-lg relative duration-300" onMouseEnter={()=>handelMouseEnter(item.id)}/>
+            <div key={item.id} className="relative duration-300 flex justify-center" onMouseLeave={()=>handelMouseLeave(item.id)}>
+            <img src={item.image} alt="/" className="rounded-lg relative duration-300" onMouseEnter={()=>handelMouseEnter(item.id)}/>
             {show[item.id]?<div className="bg-black/40 absolute flex flex-col items-center justify-center text-white text-xl top-0 w-[220px] h-[219px]">
                 <p className="border-[2px] p-8 rounded-md">{item.title}</p>
             </div>  : null}
