@@ -21,6 +21,7 @@ function Header() {
 
   const menu: MENULIST[] = [
     { id: 1, title: "صفحه اصلی", url: "" },
+    { id: 8, title: "سبد خرید", url: "/AllShopping" },
     { id: 2, title: "زنانه", url: "", icon: <AiOutlinePlus color="red" /> },
     { id: 3, title: "بجگانه", url: "", icon: <AiOutlinePlus color="red" /> },
     { id: 4, title: "پوشاک", url: "", icon: <AiOutlinePlus color="red" /> },
@@ -63,7 +64,9 @@ function Header() {
           <ul>
             <AiOutlineClose size={24} onClick={() => setShow(!show)} className="cursor-pointer" />
             {menu.map((item) => (
+              <Link to={item.url}>
               <li key={item.id} className="flex border-b-2 text-sm bg-[#F7F7F7] p-1 rounded-md items-center mt-9 justify-between">{item.title} {item.icon}</li>
+              </Link>
             ))}
           </ul>
         </div>

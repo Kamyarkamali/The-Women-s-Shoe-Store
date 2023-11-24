@@ -1,4 +1,4 @@
-
+import { useEffect,useState } from "react"
 
 //icons
 import { AiOutlineShopping } from "react-icons/ai";
@@ -11,7 +11,14 @@ function Shopping() {
 
   const state=useSelector((state)=>state.shopping)
 
- 
+  const [prodcuts,setProducts]=useState<[]>([])
+
+
+  useEffect(()=>{
+    const items=JSON.parse(localStorage.getItem("datas")||"[]")
+    setProducts(items)
+  },[])
+
   
 
 

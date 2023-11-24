@@ -4,16 +4,14 @@ import { Link } from 'react-router-dom'
 import { AiOutlineDelete } from "react-icons/ai"
 
 //redux
-import { useSelector,useDispatch } from "react-redux"
+import { useDispatch } from "react-redux"
 import { incerement , decrements , removeItem} from "../../Redux/slicer/slicer"
 
 function ShoppingMenu({data}) {
 
-  const state=useSelector((state)=>state.shopping)
+  
   const dispatch=useDispatch()
-
-  console.log(data.quantity)
-
+  
 
 
   return (

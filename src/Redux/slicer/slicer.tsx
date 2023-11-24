@@ -38,6 +38,9 @@ const shoppingSlice=createSlice({
         removeItem:(state,action)=>{
             const remove=state.shopping.filter((item)=>item.id!==action.payload)
             state.shopping=remove
+        },
+        fianal:(state)=>{
+            state.shopping=[]
         }
     }
 })
@@ -45,4 +48,4 @@ const shoppingSlice=createSlice({
 
 export const cretReducer=shoppingSlice.reducer
 
-export const {addToCart,incerement,decrements,removeItem}=shoppingSlice.actions
+export const {addToCart,incerement,decrements,removeItem,fianal}=shoppingSlice.actions

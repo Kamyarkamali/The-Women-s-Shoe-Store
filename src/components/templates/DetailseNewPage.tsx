@@ -1,3 +1,4 @@
+import {useState} from "react"
 import { AiOutlineClose } from "react-icons/ai";
 
 import {useParams} from "react-router-dom"
@@ -6,7 +7,7 @@ import {useParams} from "react-router-dom"
 import toast, { Toaster } from 'react-hot-toast';
 
 import { data } from "../../data"
-import { useState } from "react";
+
 import { sp } from "../../utils/replaceNumber";
 
 //redux
@@ -16,7 +17,6 @@ import { addToCart } from "../../Redux/slicer/slicer";
 
 function DetailseNewPage() {
 
-  
   const state=useSelector((state)=>state)
 
   const dispatch=useDispatch()
@@ -30,13 +30,19 @@ function DetailseNewPage() {
     const showModal=(id:number)=>{
       setModal(id)
     }
-  
-
+    
+    ///savetoLacalStorage
     const addToShopping=(produt:any)=>{
+      const getItem=JSON.parse(localStorage.getItem("datas") || "[]")
+      if(!getItem){
+        getItem=[]
+      }
+      getItem.push(produt)
+      localStorage.setItem("datas",JSON.stringify(getItem))
       dispatch(addToCart(produt))
       toast.success("محصول به سبد خرید اضافه شد")
     }
-
+  
 
   return (
     <div className="max-w-[1500px] shadow-md mt-4 mx-auto flex flex-col items-center bg-[#F4F5F9]">

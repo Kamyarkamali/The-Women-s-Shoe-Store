@@ -6,7 +6,6 @@ import CardAllShopp from "../module/CardAllShopp"
 function AllShopping() {
     const state=useSelector((state)=>state.shopping)
 
-      console.log(state)
   return (
     <div>
         {state.map((i)=>(

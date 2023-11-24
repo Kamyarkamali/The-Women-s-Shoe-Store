@@ -6,7 +6,8 @@ import image4 from "../../../public/product/4.jpg"
 
 //slider
 import { IMAGE } from "../../types/interface"
-import { Link } from "react-router-dom"
+
+
 
 function ProductSlider() {
 
