@@ -6,7 +6,7 @@ import logo from "../../../public/sochials/logo.png";
 
 function Footer() {
   return (
-    <div className="flex flex-col gap-6 lg:flex-row justify-around items-center max-w-[1500px] mx-auto bg-[#ECEFF1] shadow-md h-fit p-6 mt-4">
+    <div className="flex flex-col gap-6  lg:flex-row justify-around items-center max-w-[1500px] mx-auto bg-[#ECEFF1] shadow-md h-fit p-6 mt-[13rem] lg:mt-3">
       <div className="flex flex-col gap-4">
         <h1>شبکه اجتماعی ست سیتی</h1>
         <img src={instagram} alt="/" />

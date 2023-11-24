@@ -1,6 +1,15 @@
-import { Link } from "react-router-dom"
-import { takhfif } from "../../data"
 import { useState } from "react"
+
+import { Link } from "react-router-dom"
+
+//utilsNumberPrice
+import { sp } from "../../utils/replaceNumber"
+
+//component
+import { takhfif } from "../../data"
+
+
+
 
 function Discount() {
 
@@ -29,18 +38,19 @@ function Discount() {
                     <img src={item.image2} alt="/" className="w-[290px] relative h-[250px] rounded-lg" />
                 )}
             </Link>
-                <div className="flex justify-center gap-4 mt-3 font-bold items-center">
-                <p>{item.price} تومان</p>
-                    <p>کد: {item.cod}</p>
+                <div className="flex flex-col gap-4 mt-3 font-bold items-center">
+                <p>{item.title}</p>
+                <p>{sp(item.price)} تومان</p>
+                    <p className="hidden lg:block">کد: {item.cod}</p>
                 </div>
                 <div className="absolute top-[84rem]">
-                    <p className="bg-[#d22323c4] p-1 rounded-lg text-white mr-[-14px]">{item.discount} %</p>
+                    <p className="bg-[#d22323c4] p-1 rounded-lg text-white mr-[-14px] hidden lg:block">{item.discount} %</p>
                 </div>
             </div>
             </div>
         ))}
     </div>
-            <div className="flex justify-center"><button className="border-2 bg-black/40 p-1 rounded-md to-white w-[140px]">دیدن همه</button></div>
+            <div className="lg:flex lg:justify-center hidden"><button className="border-2 bg-black/40 p-1 rounded-md to-white w-[140px]">دیدن همه</button></div>
         </>
   )
 }

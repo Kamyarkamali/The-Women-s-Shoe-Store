@@ -3,6 +3,7 @@ import { useState } from "react"
 import { data } from "../../data"
 
 import { Link } from "react-router-dom"
+import { sp } from "../../utils/replaceNumber";
 
 function NewProduct() {
 
@@ -41,7 +42,7 @@ function NewProduct() {
               </div>
             </Link>
             <p className="text-center mt-3 font-bold">{item.title}</p>
-            <p className="text-center mt-6 text-red-600 font-bold">{item.price} تومان</p>
+            <p className="text-center mt-6 text-red-600 font-bold">{sp(item.price)} تومان</p>
           </div>
         ))}
       </div>

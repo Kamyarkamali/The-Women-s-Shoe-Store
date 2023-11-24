@@ -44,12 +44,14 @@ function Header() {
       </div>
 
       <div>
+        <Link to={"/regester"}>
         <button className="lg:flex items-center bg-[#218838] hidden text-white p-1 rounded-2xl">
           <AiOutlineUser /> وارد شوید
           /
           ساخت اکانت
           <AiOutlineUserAdd />
         </button>
+        </Link>
         <div className="lg:hidden md:block relative hover:border-2 hover:bg-[#d6caca] duration-300 hover:rounded-full hover:p-1">
           {/* menu */}
           <AiOutlineMenu size={30} className="cursor-pointer" onClick={() => setShow(!show)} />
