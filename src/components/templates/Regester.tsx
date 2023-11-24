@@ -2,6 +2,10 @@ import {useState,useEffect} from "react"
 
 import { getCookie } from "../helpers/cookie"
 
+//spinare loader
+
+import Loader from "../module/Loader"
+
 //image
 import login from "../../../public/assets/login.png"
 
@@ -13,6 +17,8 @@ function Regester() {
 
   const [messege,setMessege]=useState<boolean>(false)
 
+  const [loader,setLoader]=useState<boolean>(false)
+
   const cookie=getCookie()
 
   const submitHandeler=(e)=>{
@@ -20,12 +26,15 @@ function Regester() {
   }
 
   const sendHandeler=async()=>{
+    setLoader(true)
     const res=await fetch("https://fakestoreapi.com/auth/login",{
       method:"POST",
       body:JSON.stringify({username,password}),
       headers:{"Content-Type": "application/json"},
     })
     const json=await res.json()
+    setLoader(false)
+    location.reload()
     document.cookie=`token=${json.token}`
   }
 
@@ -65,7 +74,11 @@ function Regester() {
             <input onChange={(e)=>setPassword(e.target.value)} value={password} type="password" placeholder="رمز عبور.." className="bg-slate-200 p-2 w-[200px] border-blue-400 border-[1px] rounded-lg placeholder:text-black outline-none"/>
         </div>
         <div className="flex justify-center">
-            <button onClick={sendHandeler} className="bg-blue-600 p-1 rounded-lg text-white w-[130px]">ثبت نام</button>
+            {!loader ? (
+              <button onClick={sendHandeler} className="bg-blue-600 p-1 rounded-lg text-white w-[130px]">ثبت نام</button>
+            ) : (
+              <Loader/>
+            )}
         </div>
         <div className="flex flex-col items-center">
             <p className="text-blue-500">اکانت نساخته اید؟</p>
