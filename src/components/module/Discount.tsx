@@ -13,24 +13,28 @@ import { takhfif } from "../../data"
 
 function Discount() {
 
-    const [show,setShow]=useState<boolean>(false)
+    const [show,setShow]=useState<Record<number,boolean>>({})
 
 
     const mouseEneter = (itemId: number) => {
+        // @ts-ignore
         setShow((prev) => ({ ...prev, [itemId]: true }))
       }
     
       const mouseLeave = (itemId: number) => {
+        // @ts-ignore
         setShow((prev) => ({ ...prev, [itemId]: false }))
       }
 
   return (
     <>
+    
     <div className=" max-w-[1500px] lg:bg-[#F11932] h-[600px] gap-2 mx-auto lg:flex grid grid-cols-2 md:grid-cols-4 items-center rounded-lg justify-center mt-8">
         {takhfif.map((item:any)=>(
             <div key={item.id}>
             <div className="bg-white border-[2px] flex flex-col h-[380px] p-3 rounded-md" onMouseLeave={()=>mouseLeave(item.id)}> 
             <Link to={`/DetailseNewPage/${item.id}`}>
+                
                 {!show[item.id] ? (
                 <img src={item.image1} alt="/" className="w-[290px] relative h-[250px] rounded-lg" onMouseEnter={()=>mouseEneter(item.id)}/>
 

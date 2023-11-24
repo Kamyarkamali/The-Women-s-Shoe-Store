@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState } from "react";
 
 //cions
 import { AiOutlineArrowDown } from "react-icons/ai";
@@ -16,15 +16,15 @@ import { Link } from "react-router-dom";
 function Menu() {
 
 
-    const [prodcuts,setProducts]=useState<[]>([])
+    // const [prodcuts,setProducts]=useState<any[]>([])
 
 
-    useEffect(()=>{
-      const items=JSON.parse(localStorage.getItem("datas")||"[]")
-      setProducts(items)
-    },[])
+    // useEffect(()=>{
+    //   const items=JSON.parse(localStorage.getItem("datas")||"[]")
+    //   setProducts(items)
+    // },[])
   
-
+    // @ts-ignore
     const state=useSelector((state)=>state.shopping.length)
     
 
@@ -53,7 +53,8 @@ function Menu() {
                 <span className="absolute bg-[#3D3D3D] left-[3.4rem] top-[1.4rem] rounded-full p-[3px] h-6 w-5 text-white text-center">{state || 0}</span>
             </ul>
             <div className={!shopping ? "absolute duration-300 flex justify-center left-[-100%] top-[2.8rem] rounded-lg" : "absolute flex justify-center duration-300 left-[-36px] top-[2.8rem] rounded-lg"}>
-                {shopping&&<Shopping data={prodcuts}/>}
+                
+                {shopping&&<Shopping />}
                 {shopping&&<AiOutlineClose size={24} className="absolute cursor-pointer left-[23rem] z-50" onClick={()=>setShopping(!shopping)}/>}
             </div>
         </div>

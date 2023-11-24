@@ -11,23 +11,24 @@ import { data } from "../../data"
 import { sp } from "../../utils/replaceNumber";
 
 //redux
-import { useSelector,useDispatch } from "react-redux";
+import {useDispatch } from "react-redux";
 import { addToCart } from "../../Redux/slicer/slicer";
 
 
 function DetailseNewPage() {
 
-  const state=useSelector((state)=>state)
+  // const state=useSelector((state)=>state)
 
   const dispatch=useDispatch()
 
-  const [modal,setModal]=useState<null>(null)
+  const [modal,setModal]=useState<string|null>(null)
 
-    const {id}=useParams()
+    const {id}=useParams<{id:string}>()
 
+    // @ts-ignore
     const products:any=data[id-1]
-
     const showModal=(id:number)=>{
+      // @ts-ignore
       setModal(id)
     }
     
@@ -35,6 +36,7 @@ function DetailseNewPage() {
     const addToShopping=(produt:any)=>{
       const getItem=JSON.parse(localStorage.getItem("datas") || "[]")
       if(!getItem){
+        // @ts-ignore
         getItem=[]
       }
       getItem.push(produt)

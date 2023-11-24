@@ -1,5 +1,4 @@
 import './App.css'
-import Discount from './components/module/Discount'
 import DetailseNewPage from './components/templates/DetailseNewPage'
 import DiscountDetailse from './components/templates/DiscountDetailse'
 import HomePage from './components/templates/HomePage'

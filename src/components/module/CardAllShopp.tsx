@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+
 
 import { sp } from "../../utils/replaceNumber"
 
@@ -9,22 +9,22 @@ import { AiOutlineDelete } from "react-icons/ai";
 import toast, { Toaster } from 'react-hot-toast';
 
 //redux
-import {useDispatch, useSelector} from "react-redux"
+import {useDispatch} from "react-redux"
 import {incerement , decrements , removeItem} from "../../Redux/slicer/slicer"
 
-function CardAllShopp({data}) {
+function CardAllShopp({data}:any) {
 
-  const [products,setProducts]=useState<[]>([])
+  // const [products,setProducts]=useState<[]>([])
 
-  const state=useSelector((state)=>state.shopping)
-  console.log(state)
+  // const state=useSelector((state)=>state.shopping)
+  // console.log(state)
 
-  useEffect(()=>{
-    const storeData=JSON.parse(localStorage.getItem("datas") || '[]')
-    setProducts(storeData)
-  },[])
+  // useEffect(()=>{
+  //   const storeData=JSON.parse(localStorage.getItem("datas") || '[]')
+  //   setProducts(storeData)
+  // },[])
 
-  const remove=(id)=>{
+  const remove=(id:string)=>{
     dispatch(removeItem(id))
     toast.success("پرداخت انجام شد")
     window.location.replace("/")
@@ -36,7 +36,6 @@ function CardAllShopp({data}) {
 
   return (
     <div className='flex flex-col gap-8 lg:flex-row items-center justify-between max-w-[1500px] mx-auto mt-9'>
-      
         <div className='border-[2px] flex items-center lg:justify-around justify-between lg:w-[900px] h-fit p-4 border-gray-300 rounded-lg'>
             <img src={data.image1} alt='/' className='lg:w-[100px] w-[40px] rounded-lg'/>
             <p className='text-sm text-gray-500 w-[100px]'>{data.title}</p>
@@ -50,7 +49,6 @@ function CardAllShopp({data}) {
             </button>
             </div>
         </div>
-
 
         <div className="border-[1px] p-3 lg:h-[300px] lg:w-[450px] flex flex-col justify-center border-gray-500 rounded-md">
           <h1 className="text-center text-xl">مجموعه کل سبد خرید</h1>

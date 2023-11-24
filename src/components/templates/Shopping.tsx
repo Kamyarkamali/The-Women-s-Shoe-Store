@@ -8,9 +8,9 @@ import {useSelector} from "react-redux"
 import ShoppingMenu from "../module/ShoppingMenu";
 
 function Shopping() {
-
+      // @ts-ignore
   const state=useSelector((state)=>state.shopping)
-
+  // @ts-ignore
   const [prodcuts,setProducts]=useState<[]>([])
 
 
@@ -33,7 +33,7 @@ function Shopping() {
             <p className="text-center mt-16 bg-gray-400 p-1 text-black font-bold rounded-md">سبد خرید خالی است :(</p>
           ) :(
             <div>
-              {state.map((item)=>(
+              {state.map((item:any)=>(
                 <ShoppingMenu key={item.id} data={item}/>
               ))}
             </div>

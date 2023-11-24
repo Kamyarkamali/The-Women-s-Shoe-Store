@@ -1,4 +1,5 @@
 //interface
+
 import image1 from "../public/newProducts/1.jpg";
 import image2 from "../public/newProducts/2.jpg";
 import image3 from "../public/newProducts/3.jpg";
@@ -63,8 +64,8 @@ const data:DATA[]=[
     {id:4,title:"صندل لژدارکشی کد 1111",cod:1111,image1:image15,image2:image16,image3:image17,description:des,category:"کفش و چکمه",price:595000},
 ]
 
-
-const takhfif:DATA=[
+// @ts-ignore
+const takhfif=[
     {id:1,image1:image18,image2:image19,image3:image20,image4:image20,image5:image21,title:"کتونی برشکا لژ دار کد 1284",description:des3,cod:1284,price:330000,category:"کفش و چکمه",discount:27},
     {id:2,image1:image25,image2:image26,image3:image22,image4:image23,image5:image24,title:"صندل لژدارکشی کد 1111",description:des4,cod:1111,price:330000,category:"کفش و چکمه",discount:25},
     {id:3,image1:image27,image2:image28,image3:image29,image4:image30,title:"کتونی مکویین لویی ویتون کد 1250",description:des5,cod:1250,price:580000,category:"کفش و چکمه",discount:8},

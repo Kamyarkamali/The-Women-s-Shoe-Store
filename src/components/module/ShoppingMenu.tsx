@@ -7,7 +7,7 @@ import { AiOutlineDelete } from "react-icons/ai"
 import { useDispatch } from "react-redux"
 import { incerement , decrements , removeItem} from "../../Redux/slicer/slicer"
 
-function ShoppingMenu({data}) {
+function ShoppingMenu({data}:any) {
 
   
   const dispatch=useDispatch()

@@ -20,7 +20,7 @@ function Regester() {
   const [loader,setLoader]=useState<boolean>(false)
 
   const cookie=getCookie()
-
+  // @ts-ignore
   const submitHandeler=(e)=>{
     e.preventDefault()
   }

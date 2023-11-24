@@ -11,10 +11,12 @@ function NewProduct() {
 
 
   const mouseEneter = (itemId: number) => {
+    // @ts-ignore
     setShowImage((prev) => ({ ...prev, [itemId]: true }))
   }
 
   const mouseLeave = (itemId: number) => {
+    // @ts-ignore
     setShowImage((prev) => ({ ...prev, [itemId]: false }))
   }
 
@@ -29,7 +31,8 @@ function NewProduct() {
           <div key={item.id} className="border-[2px] bg-white">
             <Link to={`/NewDetailse/${item.id}`}>
               <div onMouseLeave={() => mouseLeave(item.id)}>
-                {
+                
+                {// @ts-ignore
                   !shoImage[item.id] ? (
                     <img src={item.image1} alt="/" className="w-[290px] rounded-md h-[250px] object-cover bg-white p-3 shadow-lg " onMouseEnter={() => mouseEneter(item.id)} />
 

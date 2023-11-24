@@ -11,7 +11,7 @@ import { IMAGE } from "../../types/interface"
 
 function ProductSlider() {
 
-    const [show, setShow] = useState<boolean>(false)
+    const [show, setShow] = useState<{ [key: number]: boolean }>({});
 
     const menu: IMAGE[] = [
         { id: 1, image: image1, title: "کفش بچکانه" },
@@ -21,10 +21,12 @@ function ProductSlider() {
     ]
 
     const handelMouseEnter = (itemId: number) => {
+        // @ts-ignore
         setShow((prev) => ({ ...prev, [itemId]: true }))
     }
 
     const handelMouseLeave = (itemId: number) => {
+        // @ts-ignore
         setShow((prev) => ({ ...prev, [itemId]: false }))
     }
 

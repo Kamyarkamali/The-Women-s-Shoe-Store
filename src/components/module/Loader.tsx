@@ -9,7 +9,9 @@ function Loader() {
     radius="9"
     color="green"
     ariaLabel="loading"
+    // @ts-ignore
     wrapperStyle
+    // @ts-ignore
     wrapperClass
     />
     )

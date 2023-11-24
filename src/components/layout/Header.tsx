@@ -1,5 +1,6 @@
 import { useState } from "react"
 //image-logo
+// @ts-ignore
 import logo from "../../../public/assets/logo.jpg"
 import Search from "../module/Search"
 

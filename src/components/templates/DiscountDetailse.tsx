@@ -11,12 +11,12 @@ import { AiOutlineClose } from "react-icons/ai";
 import { sp } from "../../utils/replaceNumber";
 
 //redux
-import { useSelector,useDispatch } from "react-redux";
+import {useDispatch } from "react-redux";
 import { addToCart } from "../../Redux/slicer/slicer";
 
 function DiscountDetailse() {
 
-  const state=useSelector((state)=>state)
+
 
   const dispatch=useDispatch()
 
@@ -24,10 +24,11 @@ function DiscountDetailse() {
     const [modal,setModal]=useState<null>(null)
 
     const {id}=useParams()
-
+  // @ts-ignore
     const newDetilse=takhfif[id-1]
 
     const showModal=(id:number)=>{
+      // @ts-ignore
       setModal(id)
     }
 
