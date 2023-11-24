@@ -24,7 +24,8 @@ interface DATA{
     cod:number,
     description:any,
     category:string,
-    price:number
+    price:number,
+    discount?:string
 }
 
 export type {MENULIST,IMAGE,DATA}

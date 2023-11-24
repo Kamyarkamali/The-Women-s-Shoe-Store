@@ -1,20 +1,16 @@
-import Footer from "./Footer"
-import Header from "./Header"
+import Footer from "./Footer";
+import Header from "./Header";
 
-function Layout({children}:any) {
+function Layout({ children }: any) {
   return (
     <div>
-      
-    <Header/>
+      <Header />
 
-    <div className="h-fit">
-      {children}
+      <div className="h-fit">{children}</div>
+
+      <Footer />
     </div>
-
-    <Footer/>
-
-    </div>
-  )
+  );
 }
 
-export default Layout
+export default Layout;
