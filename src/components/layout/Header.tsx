@@ -22,6 +22,7 @@ function Header() {
 
   const menu: MENULIST[] = [
     { id: 1, title: "صفحه اصلی", url: "" },
+    { id: 9, title: "ورود و ثبت نام", url: "/regester" },
     { id: 8, title: "سبد خرید", url: "/AllShopping" },
     { id: 2, title: "زنانه", url: "", icon: <AiOutlinePlus color="red" /> },
     { id: 3, title: "بجگانه", url: "", icon: <AiOutlinePlus color="red" /> },
@@ -31,6 +32,11 @@ function Header() {
     { id: 7, title: "رهگیری مرسولات پستی", url: "" },
     { id: 8, title: "کسب درآمد بدون سرمایه", url: "" },
   ]
+
+
+  const closeMenu = () => {
+    setShow(false);
+  };
 
   return (
     <>
@@ -65,8 +71,8 @@ function Header() {
           <ul>
             <AiOutlineClose size={24} onClick={() => setShow(!show)} className="cursor-pointer" />
             {menu.map((item) => (
-              <Link to={item.url}>
-              <li key={item.id} className="flex border-b-2 text-sm bg-[#F7F7F7] p-1 rounded-md items-center mt-9 justify-between">{item.title} {item.icon}</li>
+              <Link key={item.id} to={item.url}>
+              <li onClick={closeMenu} className="flex border-b-2 text-sm bg-[#F7F7F7] p-1 rounded-md items-center mt-9 justify-between">{item.title} {item.icon}</li>
               </Link>
             ))}
           </ul>

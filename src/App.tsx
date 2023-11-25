@@ -1,15 +1,23 @@
+import { useEffect } from 'react'
 import './App.css'
+
+//components
 import DetailseNewPage from './components/templates/DetailseNewPage'
 import DiscountDetailse from './components/templates/DiscountDetailse'
 import HomePage from './components/templates/HomePage'
-
-import { Routes,Route } from "react-router-dom"
 import Regester from './components/templates/Regester'
 import AllShopping from './components/templates/AllShopping'
+
+//routers
+import { Routes,Route } from "react-router-dom"
 
 
 
 function App() {
+
+  useEffect(()=>{
+    document.title="فروشگاه کفش زنانه"
+  },[])
 
   return (
     <>

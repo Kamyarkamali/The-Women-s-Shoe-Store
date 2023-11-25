@@ -30,6 +30,10 @@ function Menu() {
 
     const [shopping,setShopping]=useState<boolean>(false)
 
+    const closeMenu=()=>{
+        setShopping(false)
+    }
+
     const menu: MENULIST[] = [
         { id: 1, title: "صفحه اصلی", url: "" },
         { id: 2, title: "زنانه", url: "", icon: <AiOutlineArrowDown color="red" /> },
@@ -52,7 +56,7 @@ function Menu() {
                 <AiFillShopping color="gray" size={30} className="absolute left-9 cursor-pointer" onClick={()=>setShopping(!shopping)}/>
                 <span className="absolute bg-[#3D3D3D] left-[3.4rem] top-[1.4rem] rounded-full p-[3px] h-6 w-5 text-white text-center">{state || 0}</span>
             </ul>
-            <div className={!shopping ? "absolute duration-300 flex justify-center left-[-100%] top-[2.8rem] rounded-lg" : "absolute flex justify-center duration-300 left-[-36px] top-[2.8rem] rounded-lg"}>
+            <div onClick={closeMenu} className={!shopping ? "absolute duration-300 flex justify-center left-[-100%] top-[2.8rem] rounded-lg" : "absolute flex justify-center duration-300 left-[-36px] top-[2.8rem] rounded-lg"}>
                 
                 {shopping&&<Shopping />}
                 {shopping&&<AiOutlineClose size={24} className="absolute cursor-pointer left-[23rem] z-50" onClick={()=>setShopping(!shopping)}/>}

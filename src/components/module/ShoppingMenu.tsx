@@ -12,7 +12,7 @@ function ShoppingMenu({data}:any) {
   
   const dispatch=useDispatch()
   
-
+  
 
   return (
     <div className='border-2 flex flex-col gap-4'>
@@ -28,7 +28,7 @@ function ShoppingMenu({data}:any) {
         </div>
         <span className='text-center text-white font-bold border-[1px] bg-red-500 rounded-md'>{data.quantity}</span>
         <div className='flex gap-6 justify-center mt-8'>
-            <button className='bg-green-500 p-1 w-[130px] rounded-md text-white font-bold'>تسویه حساب</button>
+            <button className='bg-green-500 p-1 w-[130px] rounded-md text-white font-bold' onClick={()=>dispatch(removeItem(data.id))}>تسویه حساب</button>
             <Link to={"/AllShopping"}>
             <button className='border-2 p-1 rounded-md border-gray-400 hover:bg-gray-300 duration-300 hover:text-red-500'>مشاهده سبد خرید</button>
             </Link>
